@@ -4,12 +4,10 @@
   "description": "A set of utilities for managing Angular reactive forms.",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0",
-    "@angular/forms": "^19.2.0"
+    "@angular/core": "^19.2.0"
   },
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless"
+    "build": "ng-packagr -p ng-package.json"
   },
   "repository": {
     "type": "git",
@@ -37,7 +35,6 @@
     "@angular-devkit/build-angular": "^19.2.7",
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0",
-    "@angular/forms": "^19.2.0",
     "ng-packagr": "^19.2.2"
   }
 }

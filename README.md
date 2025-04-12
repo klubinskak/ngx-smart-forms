@@ -25,8 +25,6 @@
 ✅ Dev-only debug panel component 🧪  
 ✅ Works with standalone and traditional modules  
 ✅ Fully tree-shakable & Ivy-compiled
-✅ Support for dynamic form controls
-✅ Proper memory cleanup
 
 ---
 
@@ -45,7 +43,7 @@ npm install ngx-smart-forms
 ### 1. Inject the service
 
 ```ts
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgxSmartFormsService } from 'ngx-smart-forms';
 
@@ -53,7 +51,7 @@ import { NgxSmartFormsService } from 'ngx-smart-forms';
   selector: 'app-my-form',
   templateUrl: './my-form.component.html',
 })
-export class MyFormComponent implements OnDestroy {
+export class MyFormComponent {
   form: FormGroup;
 
   constructor(
@@ -66,11 +64,6 @@ export class MyFormComponent implements OnDestroy {
     });
 
     this.smartForms.storeInitialValues(this.form);
-  }
-  
-  ngOnDestroy(): void {
-    // Prevent memory leaks
-    this.smartForms.cleanupForm(this.form);
   }
 }
 ```
@@ -115,20 +108,6 @@ canDeactivate(): boolean {
 
 ---
 
-### 5. Managing Dynamic Forms
-
-When adding new controls to your form dynamically:
-
-```ts
-// Add new control
-this.form.addControl('address', this.fb.control(''));
-
-// Update initial values for new controls
-this.smartForms.updateInitialValuesForNewControls(this.form);
-```
-
----
-
 ## 🧠 Why Use This?
 
 Angular gives you reactive forms, but not:
@@ -137,7 +116,6 @@ Angular gives you reactive forms, but not:
 - Smart "unsaved changes" detection
 - Reset logic for dynamic forms
 - Signal-powered change tracking
-- Memory leak prevention for forms
 
 **ngx-smart-forms** solves all that with one clean service.
 
@@ -167,16 +145,6 @@ Resets selected controls only.
 
 ### `canDeactivate(formGroup: FormGroup): boolean`
 Returns `false` if the form has unsaved changes.
-
----
-
-### `updateInitialValuesForNewControls(formGroup: FormGroup): void`
-Updates initial values for newly added controls. Call after dynamically adding controls.
-
----
-
-### `cleanupForm(formGroup: FormGroup): void`
-Removes all references and subscriptions for a specific form. Call in ngOnDestroy to prevent memory leaks.
 
 ---
 
