@@ -8,7 +8,8 @@
     "@angular/forms": "^19.2.0"
   },
   "scripts": {
-    "build": "ng-packagr -p ng-package.json"
+    "build": "ng-packagr -p ng-package.json",
+    "test": "ng test"
   },
   "repository": {
     "type": "git",
