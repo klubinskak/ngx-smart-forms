@@ -1,0 +1,43 @@
+{
+  "name": "ngx-smart-forms",
+  "version": "1.0.0",
+  "description": "A set of utilities for managing Angular reactive forms.",
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klubinskak/ngx-smart-forms.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/klubinskak/ngx-smart-forms/issues"
+  },
+  "homepage": "https://github.com/klubinskak/ngx-smart-forms#readme",
+  "dependencies": {
+  },
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "allowedNonPeerDependencies": [
+      "@angular/common",
+      "@angular/core"
+    ]
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.7",
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
+    "ng-packagr": "^19.2.2"
+  }
+}
