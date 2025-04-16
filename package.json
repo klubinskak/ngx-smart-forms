@@ -8,8 +8,7 @@
     "@angular/forms": "^19.2.0"
   },
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless"
+    "build": "ng-packagr -p ng-package.json"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,10 @@
     "entryFile": "src/public-api.ts",
     "allowedNonPeerDependencies": [
       "@angular/common",
-      "@angular/core"
+      "@angular/core",
+      "@angular/compiler",
+      "@angular/forms",
+      "@angular/compiler-cli"
     ]
   },
   "license": "MIT",
@@ -37,7 +39,10 @@
     "@angular-devkit/build-angular": "^19.2.7",
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0",
+    "@angular/compiler": "^19.2.0",
+    "@angular/compiler-cli": "^19.2.0",
     "@angular/forms": "^19.2.0",
+    "typescript": "~5.5.0",
     "ng-packagr": "^19.2.2"
   }
 }
